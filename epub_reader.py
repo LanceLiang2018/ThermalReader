@@ -3,6 +3,7 @@ from ebooklib import epub
 import os
 from bs4 import BeautifulSoup
 import copy
+from PIL import Image
 
 
 EpubBookData = {
@@ -41,12 +42,33 @@ def do_it(filename):
     form_book(data)
 
 
+PageData = {
+    'lines': [],
+    'height': 0,
+    'width': 0
+}
+
+
+def show_one_page(lines, width):
+    for line in lines:
+        while line != '':
+            print(line[:width])
+            line = line[width:]
+
+
 def get_one_page(lines, target_height, max_width):
-    pass
+    page_data = copy.deepcopy(PageData)
+    page_data['height'] = target_height
+    width = max_width
+
+    return page_data
 
 
 def form_book(bookdata):
-    pass
+    for chapter in bookdata['contents']:
+        lines = chapter['text'].split('\n')
+        page_data = get_one_page(lines, 20, 20)
+        show_one_page(lines, 30)
 
 
 if __name__ == '__main__':
