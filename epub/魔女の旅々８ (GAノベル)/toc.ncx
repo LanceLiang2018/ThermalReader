@@ -1,0 +1,69 @@
+<?xml version='1.0' encoding='utf-8'?>
+<ncx xmlns="http://www.daisy.org/z3986/2005/ncx/" version="2005-1" xml:lang="jpn">
+  <head>
+    <meta content="c74989a9-9129-4300-a627-3130d96755cd" name="dtb:uid"/>
+    <meta content="2" name="dtb:depth"/>
+    <meta content="calibre (3.18.0)" name="dtb:generator"/>
+    <meta content="0" name="dtb:totalPageCount"/>
+    <meta content="0" name="dtb:maxPageNumber"/>
+  </head>
+  <docTitle>
+    <text>魔女の旅々８ (GAノベル)</text>
+  </docTitle>
+  <navMap>
+    <navPoint class="chapter" id="num_1" playOrder="0">
+      <navLabel>
+        <text>目次</text>
+      </navLabel>
+      <content src="text/part0009.html#8IL20-118d06146aa643c0bfc8b98b0ba5f640"/>
+    </navPoint>
+    <navPoint class="chapter" id="num_2" playOrder="1">
+      <navLabel>
+        <text>第一章　大切な人のための大切な日</text>
+      </navLabel>
+      <content src="text/part0010.html"/>
+    </navPoint>
+    <navPoint class="chapter" id="num_3" playOrder="2">
+      <navLabel>
+        <text>第二章　不死の病</text>
+      </navLabel>
+      <content src="text/part0011.html"/>
+    </navPoint>
+    <navPoint class="chapter" id="num_4" playOrder="3">
+      <navLabel>
+        <text>第三章　よそはよそ</text>
+      </navLabel>
+      <content src="text/part0016.html"/>
+    </navPoint>
+    <navPoint class="chapter" id="num_5" playOrder="4">
+      <navLabel>
+        <text>第四章　悪の組織へようこそ</text>
+      </navLabel>
+      <content src="text/part0017.html"/>
+    </navPoint>
+    <navPoint class="chapter" id="num_6" playOrder="5">
+      <navLabel>
+        <text>第五章　猫耳喫茶へようこそ</text>
+      </navLabel>
+      <content src="text/part0024.html"/>
+    </navPoint>
+    <navPoint class="chapter" id="num_7" playOrder="6">
+      <navLabel>
+        <text>第六章　フレデリカ</text>
+      </navLabel>
+      <content src="text/part0027.html"/>
+    </navPoint>
+    <navPoint class="chapter" id="num_8" playOrder="7">
+      <navLabel>
+        <text>第七章　星屑が降る夜</text>
+      </navLabel>
+      <content src="text/part0031.html"/>
+    </navPoint>
+    <navPoint class="chapter" id="num_9" playOrder="8">
+      <navLabel>
+        <text>奥付</text>
+      </navLabel>
+      <content src="text/part0039.html#1565U0-118d06146aa643c0bfc8b98b0ba5f640"/>
+    </navPoint>
+  </navMap>
+</ncx>

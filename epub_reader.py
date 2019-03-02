@@ -5,6 +5,7 @@ from bs4 import BeautifulSoup
 import copy
 from PIL import Image, ImageDraw, ImageFont
 import pylab
+from tqdm import trange
 
 
 EpubBookData = {
@@ -110,10 +111,12 @@ def get_one_page(lines, target_height, max_width):
     return page_data
 
 
-def form_book(book_data, height=10, max_width=40):
+def form_book(book_data, height=40, max_width=70):
     gblanks = []
+    img_pages = []
 
     for chapter in book_data['contents']:
+        print("Parsing:", chapter['title'])
         lines = chapter['text'].split('\n')
         start = 0
         offset_char = 0
@@ -159,7 +162,9 @@ def form_book(book_data, height=10, max_width=40):
             start = start + page_data['end_of_line']
 
             # show_one_page(page_data['lines'])
-            draw_one_page(page_data, book_data, progress=float(start/len(lines)), chapter=chapter['title'])
+            img_page = draw_one_page(page_data, book_data, progress=float(start/len(lines)), chapter=chapter['title'])
+            if img_page is not None:
+                img_pages.append(img_page)
 
     # gsum = [0, ] * (max_width - 3)
     # for b in gblanks:
@@ -170,9 +175,20 @@ def form_book(book_data, height=10, max_width=40):
     # pylab.plot(range(max_width - 3), gsum)
     # pylab.show()
 
+    sumx = 0
+    for i in img_pages:
+        sumx = sumx + i.size[0]
+    final = Image.new("RGB", (sumx, img_pages[0].size[1]))
+    sumx = 0
+    for i in trange(len(img_pages)):
+        final.paste(img_pages[i], box=(sumx, 0))
+        sumx = sumx + img_pages[i].size[0]
+    final.show()
+    final.save('%s.png' % book_data['title'])
 
-font = ImageFont.truetype("msyh.ttc", 20)
-font_small = ImageFont.truetype("msyh.ttc", 12)
+
+font = ImageFont.truetype("msyh.ttc", 15)
+font_small = ImageFont.truetype("msyh.ttc", 10)
 
 
 def draw_one_text(page_data):
@@ -200,8 +216,15 @@ def draw_one_page(page_data, book_data, progress=0.0, chapter=''):
     draw = ImageDraw.Draw(img_page)
     draw.ink = 0
     draw.text((0, 2), book_data['title'], font=font_small)
-    draw.text((0, img_page.size[1]-text_size_small[1]-2), chapter, font=font_small)
-    img_page.show()
+    draw.text((0, img_page.size[1] - text_size_small[1] - 2), chapter, font=font_small)
+    chapter_size = draw.textsize(chapter, font=font_small)
+    draw.text((chapter_size[0] + text_size_small[0], img_page.size[1]-text_size_small[1]-2), "%.2f%%" % (progress * 100),
+              font=font_small)
+    draw.line((text_size[0], img_page.size[1]-text_size_small[1]-2-4,
+               img_text.size[0] * progress, img_page.size[1]-text_size_small[1]-2-4))
+    draw.line((img_page.size[0]-1, 0, img_page.size[0]-1, img_page.size[1]))
+    # img_page.show()
+    return img_page
 
 
 if __name__ == '__main__':

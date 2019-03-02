@@ -1,0 +1,48 @@
+<?xml version="1.0"  encoding="UTF-8"?>
+<package xmlns="http://www.idpf.org/2007/opf" unique-identifier="uuid_id" version="2.0">
+  <metadata xmlns:calibre="http://calibre.kovidgoyal.net/2009/metadata" xmlns:dc="http://purl.org/dc/elements/1.1/" xmlns:dcterms="http://purl.org/dc/terms/" xmlns:opf="http://www.idpf.org/2007/opf" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
+    <dc:title>魔女之旅 第二卷</dc:title>
+    <dc:creator opf:role="aut" opf:file-as="白石定规">白石定规</dc:creator>
+    <dc:date>0101-01-01T00:00:00+00:00</dc:date>
+    <dc:identifier id="uuid_id" opf:scheme="uuid">11e6ad34-c772-46b3-9e0f-04f1e598b819</dc:identifier>
+    <dc:contributor opf:role="bkp">calibre (3.14.0) [https://calibre-ebook.com]</dc:contributor>
+    <dc:language>zh</dc:language>
+    <dc:identifier opf:scheme="calibre">11e6ad34-c772-46b3-9e0f-04f1e598b819</dc:identifier>
+    <meta name="cover" content="cover"/>
+    <meta name="calibre:title_sort" content="魔女之旅 第二卷"/>
+    <meta name="calibre:timestamp" content="2018-02-18T03:12:42.314000+00:00"/>
+    <meta name="calibre:author_link_map" content="{&quot;白石定规&quot;: &quot;&quot;}"/>
+  </metadata>
+  <manifest>
+    <item href="titlepage.xhtml" id="titlepage" media-type="application/xhtml+xml"/>
+    <item href="toc.xhtml" id="id12" media-type="application/xhtml+xml"/>
+    <item href="index_split_000.html" id="html2" media-type="application/xhtml+xml"/>
+    <item href="index_split_001.html" id="html1" media-type="application/xhtml+xml"/>
+    <item href="toc.ncx" id="ncx" media-type="application/x-dtbncx+xml"/>
+    <item href="page_styles.css" id="page_css" media-type="text/css"/>
+    <item href="stylesheet.css" id="css" media-type="text/css"/>
+    <item href="5453e183b9014a905db6e971a2773912b21bee3c.png" id="id8" media-type="image/png"/>
+    <item href="6f5bfecbd1c8a786a80de5c26c09c93d71cf5098.png" id="id1" media-type="image/png"/>
+    <item href="7c95442fb9389b5064984f9e8e35e5dde6116e58.png" id="id4" media-type="image/png"/>
+    <item href="8353143f6709c93d156fa13b943df8dcd0005426.png" id="id9" media-type="image/png"/>
+    <item href="83791bce3bc79f3d908d4bfcb1a1cd11738b2957.png" id="id10" media-type="image/png"/>
+    <item href="cd924c7e9e2f0708973d85cce224b899a801f28c.png" id="id" media-type="image/png"/>
+    <item href="cover.jpeg" id="cover" media-type="image/jpeg"/>
+    <item href="d11424c3d5628535cb8a7ded9bef76c6a6ef635d.png" id="id2" media-type="image/png"/>
+    <item href="d361d7305c6034a81d87174dc01349540823765e.png" id="id5" media-type="image/png"/>
+    <item href="da16f323720e0cf330ade1370146f21fbf09aa6e.png" id="id11" media-type="image/png"/>
+    <item href="dbcbcbed08fa513dfec9c312366d55fbb3fbd965.jpg" id="id6" media-type="image/jpeg"/>
+    <item href="f356a3fdc3cec3fd8efa08b9dd88d43f859427ff.png" id="id7" media-type="image/png"/>
+    <item href="f67ada3433fa828bf14b322ff61f4134960a5a53.jpg" id="id3" media-type="image/jpeg"/>
+  </manifest>
+  <spine toc="ncx">
+    <itemref idref="titlepage"/>
+    <itemref idref="id12"/>
+    <itemref idref="html2"/>
+    <itemref idref="html1"/>
+  </spine>
+  <guide>
+    <reference href="titlepage.xhtml" title="Cover" type="cover"/>
+    <reference type="toc" title="Table of Contents" href="toc.xhtml#calibre_generated_inline_toc"/>
+  </guide>
+</package>

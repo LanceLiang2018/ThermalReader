@@ -1,0 +1,87 @@
+<?xml version='1.0' encoding='utf-8'?>
+<ncx xmlns="http://www.daisy.org/z3986/2005/ncx/" version="2005-1" xml:lang="jpn">
+  <head>
+    <meta content="60499857-cb31-4329-9e8e-715ac96be51c" name="dtb:uid"/>
+    <meta content="2" name="dtb:depth"/>
+    <meta content="calibre (2.80.0)" name="dtb:generator"/>
+    <meta content="0" name="dtb:totalPageCount"/>
+    <meta content="0" name="dtb:maxPageNumber"/>
+  </head>
+  <docTitle>
+    <text>リリエールと祈りの国 (GA文庫)</text>
+  </docTitle>
+  <navMap>
+    <navPoint class="chapter" id="num_1" playOrder="0">
+      <navLabel>
+        <text>目次</text>
+      </navLabel>
+      <content src="text/part0011.html#AFM60-13829676e8a141ebb4363364b893886e"/>
+    </navPoint>
+    <navPoint class="chapter" id="num_2" playOrder="1">
+      <navLabel>
+        <text>PROLOGUE　プロローグ</text>
+      </navLabel>
+      <content src="text/part0012.html"/>
+    </navPoint>
+    <navPoint class="chapter" id="num_3" playOrder="2">
+      <navLabel>
+        <text>第一章　戒祈屋リリエール</text>
+      </navLabel>
+      <content src="text/part0013.html"/>
+    </navPoint>
+    <navPoint class="chapter" id="num_4" playOrder="3">
+      <navLabel>
+        <text>第二章　灰の魔女</text>
+      </navLabel>
+      <content src="text/part0018.html"/>
+    </navPoint>
+    <navPoint class="chapter" id="num_5" playOrder="4">
+      <navLabel>
+        <text>第三章　怪盗紳士</text>
+      </navLabel>
+      <content src="text/part0022.html"/>
+    </navPoint>
+    <navPoint class="chapter" id="num_6" playOrder="5">
+      <navLabel>
+        <text>第四章　リリエールの日常</text>
+      </navLabel>
+      <content src="text/part0025.html"/>
+    </navPoint>
+    <navPoint class="chapter" id="num_7" playOrder="6">
+      <navLabel>
+        <text>第五章　仮面少女</text>
+      </navLabel>
+      <content src="text/part0027.html"/>
+    </navPoint>
+    <navPoint class="chapter" id="num_8" playOrder="7">
+      <navLabel>
+        <text>第六章　夢魔恋慕</text>
+      </navLabel>
+      <content src="text/part0029.html"/>
+    </navPoint>
+    <navPoint class="chapter" id="num_9" playOrder="8">
+      <navLabel>
+        <text>第七章　王女の祈り</text>
+      </navLabel>
+      <content src="text/part0031.html"/>
+    </navPoint>
+    <navPoint class="chapter" id="num_10" playOrder="9">
+      <navLabel>
+        <text>EPILOGUE　エピローグ</text>
+      </navLabel>
+      <content src="text/part0034.html"/>
+    </navPoint>
+    <navPoint class="chapter" id="num_11" playOrder="10">
+      <navLabel>
+        <text>AFTERWORD　あとがき</text>
+      </navLabel>
+      <content src="text/part0037.html"/>
+    </navPoint>
+    <navPoint class="chapter" id="num_12" playOrder="11">
+      <navLabel>
+        <text>奥付</text>
+      </navLabel>
+      <content src="text/part0040.html#164MG0-13829676e8a141ebb4363364b893886e"/>
+    </navPoint>
+  </navMap>
+</ncx>

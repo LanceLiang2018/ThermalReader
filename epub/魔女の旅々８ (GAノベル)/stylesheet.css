@@ -1,0 +1,276 @@
+.align-center {
+    display: block;
+    height: auto;
+    text-align: center;
+    text-indent: 0;
+    width: auto;
+    margin: 0;
+    padding: 0
+    }
+.align-end {
+    display: block;
+    height: auto;
+    text-align: right;
+    text-indent: 0;
+    width: auto;
+    margin: 0;
+    padding: 0
+    }
+.bold {
+    background: transparent;
+    display: block;
+    font-family: serif-ja-v, serif-ja, serif;
+    font-size: 1em;
+    font-weight: bold;
+    margin: 0;
+    padding: 0
+    }
+.calibre {
+    display: block;
+    font-size: 2em;
+    line-height: 1.2;
+    margin: 0 5pt;
+    padding: 0
+    }
+.calibre1 {
+    display: block;
+    height: auto;
+    text-indent: inherit;
+    width: auto;
+    margin: 0;
+    padding: 0
+    }
+.calibre2 {
+    color: gray;
+    display: block;
+    height: 2px;
+    margin: 0.5em 0;
+    border-top: #000 solid 1px;
+    border-right: #000 none 1px;
+    border-bottom: #000 none 1px;
+    border-left: #000 none 1px
+    }
+.calibre3 {
+    background: transparent;
+    color: inherit;
+    font-style: inherit;
+    font-weight: inherit;
+    text-decoration: overline
+    }
+.calibre4 {
+    background: transparent;
+    display: block;
+    font-family: serif-ja-v, serif-ja, serif;
+    font-size: 1em;
+    font-weight: inherit;
+    margin: 0;
+    padding: 0
+    }
+.calibre5 {
+    line-height: 1.2
+    }
+.em-sesame {
+    -webkit-text-emphasis-style: filled sesame
+    }
+.fit {
+    background: transparent;
+    display: inline-block;
+    height: auto;
+    page-break-inside: avoid;
+    vertical-align: baseline;
+    width: auto;
+    margin: 0;
+    border: currentColor none medium;
+    padding: 0
+    }
+.fit1 {
+    background: transparent;
+    display: inline-block;
+    height: auto;
+    page-break-inside: avoid;
+    vertical-align: top;
+    width: auto;
+    margin: 0;
+    border: currentColor none medium;
+    padding: 0
+    }
+.font-085per {
+    font-size: 0.75em
+    }
+.font-095per {
+    font-size: 1em
+    }
+.font-110per {
+    font-size: 1.125em
+    }
+.font-120per {
+    font-family: sans-serif-ja, sans-serif;
+    font-size: 1.125em
+    }
+.font-130per {
+    font-size: 1.41667em
+    }
+.font-200per {
+    font-family: sans-serif-ja, sans-serif;
+    font-size: 2em;
+    line-height: 1.2
+    }
+.gaiji-width-10em {
+    background: transparent;
+    height: auto;
+    vertical-align: baseline;
+    width: 10em;
+    margin: 0;
+    border: currentColor none medium;
+    padding: 0
+    }
+.gfont {
+    font-family: sans-serif-ja, sans-serif
+    }
+.gfont1 {
+    font-family: sans-serif-ja, sans-serif;
+    font-weight: bold
+    }
+.h-indent-4em {
+    display: block;
+    height: auto;
+    text-indent: -4em;
+    width: auto;
+    margin: 0;
+    padding: 4em 0 0
+    }
+.h-indent-4em1 {
+    display: block;
+    height: auto;
+    text-indent: -4em;
+    width: auto;
+    margin: 0;
+    padding: 0 0 0 4em
+    }
+.h-indent-6em {
+    display: block;
+    height: auto;
+    text-indent: -6em;
+    width: auto;
+    margin: 0;
+    padding: 0 0 0 6em
+    }
+.main {
+    display: block
+    }
+.main1 {
+    display: block;
+    height: auto;
+    text-indent: 0;
+    width: auto;
+    margin: 0;
+    padding: 0
+    }
+.p-image {
+    -epub-hyphens: auto;
+    -epub-line-break: normal;
+    -epub-text-underline-position: under left;
+    -epub-word-break: normal;
+    -webkit-hyphens: auto;
+    -webkit-line-break: normal;
+    -webkit-text-underline-position: under left;
+    -webkit-word-break: normal;
+    background: transparent;
+    display: block;
+    font-size: 1em;
+    letter-spacing: normal;
+    line-height: 1.75;
+    text-align: center;
+    text-indent: 0;
+    vertical-align: baseline;
+    white-space: normal;
+    word-spacing: normal;
+    word-wrap: break-word;
+    margin: 0 5pt;
+    padding: 0
+    }
+.p-titlepage {
+    -epub-hyphens: auto;
+    -epub-line-break: normal;
+    -epub-text-underline-position: under left;
+    -epub-word-break: normal;
+    -webkit-hyphens: auto;
+    -webkit-line-break: normal;
+    -webkit-text-underline-position: under left;
+    -webkit-word-break: normal;
+    background: transparent;
+    display: block;
+    font-size: 1em;
+    letter-spacing: normal;
+    line-height: 1.75;
+    text-align: justify;
+    text-indent: 0;
+    vertical-align: baseline;
+    white-space: normal;
+    word-spacing: normal;
+    word-wrap: break-word;
+    margin: 0 5pt;
+    padding: 0
+    }
+.sideways {
+    -epub-text-orientation: sideways;
+    -webkit-text-orientation: sideways
+    }
+.start-1em {
+    display: block;
+    height: auto;
+    text-indent: 0;
+    width: auto;
+    margin: 1em 0 0;
+    padding: 0
+    }
+.start-2em {
+    display: block;
+    height: auto;
+    text-indent: 0;
+    width: auto;
+    margin: 2em 0 0;
+    padding: 0
+    }
+.start-6em {
+    display: block;
+    height: auto;
+    text-indent: 0;
+    width: auto;
+    margin: 6em 0 0;
+    padding: 0
+    }
+.width-4em {
+    background: transparent;
+    height: auto;
+    vertical-align: baseline;
+    width: 4em;
+    margin: 0;
+    border: currentColor none medium;
+    padding: 0
+    }
+.word-break-break-all {
+    -epub-word-break: break-all;
+    -webkit-word-break: break-all;
+    display: block;
+    height: auto;
+    text-indent: 0;
+    width: auto;
+    margin: 0;
+    padding: 0
+    }
+.pcalibre:visited {
+    color: #00f
+    }
+.pcalibre1:focus {
+    color: #00f
+    }
+.pcalibre2:link {
+    color: #00f
+    }
+.pcalibre3:hover {
+    color: #00f
+    }
+.pcalibre4:active {
+    color: #00f
+    }

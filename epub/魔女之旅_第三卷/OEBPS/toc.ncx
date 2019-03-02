@@ -1,0 +1,142 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE ncx PUBLIC "-//NISO//DTD ncx 2005-1//EN"
+  "http://www.daisy.org/z3986/2005/ncx-2005-1.dtd">
+<ncx xmlns="http://www.daisy.org/z3986/2005/ncx/" version="2005-1" xml:lang="en" dir="ltr">
+	<head>
+		<meta name="dtb:uid" content="http://www.yidm.com/article/info/2/2199.html" />
+		<meta name="dtb:depth" content="2" />
+		<meta name="dtb:totalPageCount" content="0" />
+		<meta name="dtb:maxPageNumber" content="0" />
+	</head>
+
+	<docTitle>
+		<text></text>
+	</docTitle>
+
+	<docAuthor>
+		<text></text>
+	</docAuthor>
+
+	<navMap>
+		<navPoint id="chapter1" playOrder="1">
+			<navLabel>
+				<text>封面</text>
+			</navLabel>
+			<content src="Text/CoverPage.xhtml" />
+		</navPoint>
+		<navPoint id="chapter2" playOrder="2">
+			<navLabel>
+				<text>书名</text>
+			</navLabel>
+			<content src="Text/title.xhtml" />
+		</navPoint>
+		<navPoint id="chapter3" playOrder="3">
+			<navLabel>
+				<text>制作信息</text>
+			</navLabel>
+			<content src="Text/message.xhtml" />
+		</navPoint>
+		<navPoint id="chapter4" playOrder="4">
+			<navLabel>
+				<text>简介</text>
+			</navLabel>
+			<content src="Text/Summary.xhtml" />
+		</navPoint>
+		<navPoint id="ref_toc" playOrder="5">
+			<navLabel>
+				<text>目录</text>
+			</navLabel>
+			<content src="Text/contents.xhtml" />
+		</navPoint>
+		<navPoint id="chapter5" playOrder="6">
+			<navLabel>
+				<text>第三卷 第一章 某位小姐的烦恼</text>
+			</navLabel>
+			<content src="Text/Chapter_0.xhtml" />
+		</navPoint>
+		<navPoint id="chapter6" playOrder="7">
+			<navLabel>
+				<text>第三卷 第二章 安详的永眠</text>
+			</navLabel>
+			<content src="Text/Chapter_1.xhtml" />
+		</navPoint>
+		<navPoint id="chapter7" playOrder="8">
+			<navLabel>
+				<text>第三卷 第三章 某天的报纸</text>
+			</navLabel>
+			<content src="Text/Chapter_2.xhtml" />
+		</navPoint>
+		<navPoint id="chapter8" playOrder="9">
+			<navLabel>
+				<text>第三卷 第四章 踩葡萄的少女</text>
+			</navLabel>
+			<content src="Text/Chapter_3.xhtml" />
+		</navPoint>
+		<navPoint id="chapter9" playOrder="10">
+			<navLabel>
+				<text>第三卷 第五章 杂物语：小聪明师父与真聪明徒弟</text>
+			</navLabel>
+			<content src="Text/Chapter_4.xhtml" />
+		</navPoint>
+		<navPoint id="chapter10" playOrder="11">
+			<navLabel>
+				<text>第三卷 第六章 甜点与菜鸟旅人</text>
+			</navLabel>
+			<content src="Text/Chapter_5.xhtml" />
+		</navPoint>
+		<navPoint id="chapter11" playOrder="12">
+			<navLabel>
+				<text>第三卷 第七章 杂物语：真聪明徒弟与有生命的物品</text>
+			</navLabel>
+			<content src="Text/Chapter_6.xhtml" />
+		</navPoint>
+		<navPoint id="chapter12" playOrder="13">
+			<navLabel>
+				<text>第三卷 第八章 战后第十年</text>
+			</navLabel>
+			<content src="Text/Chapter_7.xhtml" />
+		</navPoint>
+		<navPoint id="chapter13" playOrder="14">
+			<navLabel>
+				<text>第三卷 第九章 杂物语：于废墟中蔓延</text>
+			</navLabel>
+			<content src="Text/Chapter_8.xhtml" />
+		</navPoint>
+		<navPoint id="chapter14" playOrder="15">
+			<navLabel>
+				<text>第三卷 第十章 狼人或是某种别的东西之故事</text>
+			</navLabel>
+			<content src="Text/Chapter_9.xhtml" />
+		</navPoint>
+		<navPoint id="chapter15" playOrder="16">
+			<navLabel>
+				<text>第三卷 第十一章 回溯之叹</text>
+			</navLabel>
+			<content src="Text/Chapter_10.xhtml" />
+		</navPoint>
+		<navPoint id="chapter16" playOrder="17">
+			<navLabel>
+				<text>第三卷 第十二章 旅人铭刻之壁</text>
+			</navLabel>
+			<content src="Text/Chapter_11.xhtml" />
+		</navPoint>
+		<navPoint id="chapter17" playOrder="18">
+			<navLabel>
+				<text>第三卷 第十三章 刽子手</text>
+			</navLabel>
+			<content src="Text/Chapter_12.xhtml" />
+		</navPoint>
+		<navPoint id="chapter18" playOrder="19">
+			<navLabel>
+				<text>第三卷 第十四章 所有一切平凡无奇的灰之魔女故事</text>
+			</navLabel>
+			<content src="Text/Chapter_13.xhtml" />
+		</navPoint>
+		<navPoint id="chapter19" playOrder="20">
+			<navLabel>
+				<text>第三卷 后记</text>
+			</navLabel>
+			<content src="Text/Chapter_14.xhtml" />
+		</navPoint>
+	</navMap>
+</ncx>
