@@ -217,7 +217,13 @@ def form_book(book_data, height=15, max_width=40):
     #     sumx = sumx + img_pages[i].size[0]
     # final.show()
     # final.save('%s.png' % book_data['title'])
-    result.save('%s.png' % book_data['title'])
+    if not os.path.exists('./%s_crops/' % book_data['title']):
+        os.mkdir('%s_crops/' % book_data['title'])
+    step = result.size[0] // 180
+    for x in range(0, result.size[0], step):
+        crop = result.crop((x, 0, x+step, result.size[1]))
+        crop.save('%s_crops/%015d.jpg' % (book_data['title'], x))
+    # result.save('%s.png' % book_data['title'])
 
 
 font = ImageFont.truetype("msyh.ttc", 30)
@@ -264,6 +270,7 @@ def draw_one_page(page_data, book_data, progress=0.0, chapter=''):
 
 
 if __name__ == '__main__':
+    Image.MAX_IMAGE_PIXELS = 1000000000
     temp = Image.new("L", (512, 512))
     temp_draw = ImageDraw.Draw(temp)
     text_size = temp_draw.textsize('国', font=font)
