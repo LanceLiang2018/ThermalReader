@@ -12,7 +12,7 @@ from io import BytesIO
 EpubBookData = {
     'title': '',
     'cover': '',
-    'images': [],
+    # 'images': [],
     'contents': []
 }
 
@@ -31,6 +31,8 @@ def parse_html(html):
 
 
 def do_it(filename):
+    global page_count
+    page_count = 1
     print("Filename:", filename)
     book = epub.read_epub(filename)
     data = copy.deepcopy(EpubBookData)
@@ -45,10 +47,11 @@ def do_it(filename):
             data['contents'].append({'title': (item.get_name().split('/')[-1]).split('.')[0], 'text': res})
         if item.get_type() == ebooklib.ITEM_IMAGE:
             img_data = BytesIO(item.get_content())
-            img = Image.open(img_data)
-            data['images'].append(img)
+            img = Image.open(img_data).convert("L")
+            # data['images'].append(img)
+            data['contents'].append({'title': (item.get_name().split('/')[-1]).split('.')[0], 'image': img})
 
-    form_book(data)
+    form_book_const(data)
 
 
 PageData = {
@@ -226,8 +229,86 @@ def form_book(book_data, height=15, max_width=40):
     # result.save('%s.png' % book_data['title'])
 
 
-font = ImageFont.truetype("msyh.ttc", 30)
-font_small = ImageFont.truetype("msyh.ttc", 25)
+page_count = 1
+
+
+def save_one_page(page_title, page):
+    global page_count
+    filename = "%06d.jpg" % page_count
+    path = "%s_pages" % page_title
+    if not os.path.exists(path):
+        os.mkdir(path)
+    page.save("%s/%s" % (path, filename))
+    page_count = page_count + 1
+
+
+def form_book_const(book_data, height=15, width=20):
+    img_height = (height + 1) * text_size[1] + 2 * text_size_small[1]
+    for chapter in book_data['contents']:
+        if 'image' in chapter:
+            print("Parsing Image:", chapter['title'])
+            image = chapter['image']
+            image = image.resize((int(img_height / image.size[1] * image.size[0]), img_height))
+            # img_pages.append(image)
+            # result = blend_image(result, image)
+            save_one_page(book_data['title'], image)
+            continue
+        print("Parsing Text:", chapter['title'])
+        lines = chapter['text'].split('\n')
+        start = 0
+        offset_char = 0
+        while start < len(lines):
+            page_lines = lines[start:start+height]
+            if len(page_lines) == 0:
+                break
+            page_lines[0] = page_lines[0][offset_char:]
+
+            page_data = get_one_page(page_lines, height, width)
+            if page_data['end_of_line'] > 0:
+                offset_char = 0
+            offset_char = offset_char + page_data['end_of_char']
+            start = start + page_data['end_of_line']
+
+            # print('=' * width * 2)
+            # print('Got eline:', page_data['end_of_line'], 'echar:', page_data['end_of_char'],
+            #       'start:', start, 'offset:', offset_char)
+            # for pline in page_data['lines']:
+            #     print(pline)
+
+            # show_one_page(page_data['lines'])
+            img_page = draw_one_page(page_data, book_data, progress=float(start/len(lines)), chapter=chapter['title'])
+            if img_page is not None:
+                # img_pages.append(img_page)
+                # result = blend_image(result, img_page)
+                save_one_page(book_data['title'], img_page)
+
+    pages_path = "%s_pages" % book_data['title']
+    pages = os.listdir(pages_path)
+    last_img_origin = Image.new("L", (3, img_height), color='black')
+    last_img = last_img_origin.copy()
+    path = "%s_pages/res" % book_data['title']
+    if not os.path.exists(path):
+        os.mkdir(path)
+    res_count = 1
+    # for page_file in pages:
+    for i in trange(len(pages)):
+        page_file = pages[i]
+        if page_file[-4:] != '.jpg':
+            continue
+        if last_img.size[0] / last_img.size[1] > MAX_SPLIT:
+            last_img.save("%s/%06d.jpg" % (path, res_count))
+            res_count = res_count + 1
+            last_img = last_img_origin.copy()
+        image = Image.open("%s/%s" % (pages_path, page_file))
+        last_img = blend_image(last_img, image)
+
+    last_img.save("%s/%06d.jpg" % (path, res_count))
+    res_count = res_count + 1
+
+
+MAX_SPLIT = 320 / 58
+font = ImageFont.truetype("msyh.ttc", 50)
+font_small = ImageFont.truetype("msyh.ttc", 35)
 
 
 def draw_one_text(page_data):
@@ -263,8 +344,9 @@ def draw_one_page(page_data, book_data, progress=0.0, chapter=''):
     draw.text((chapter_size[0] + text_size_small[0], img_page.size[1]-text_size_small[1]-2), "  %.2f%%" % (progress * 100),
               font=font_small)
     draw.line((text_size[0], img_page.size[1]-text_size_small[1]-2-4,
-               img_text.size[0] * progress, img_page.size[1]-text_size_small[1]-2-4))
-    draw.line((img_page.size[0]-1, 0, img_page.size[0]-1, img_page.size[1]))
+               img_text.size[0] * progress, img_page.size[1]-text_size_small[1]-2-4), width=4)
+    draw.line((0, 0, 0, img_page.size[1]), width=4)
+    draw.line((img_page.size[0] - 1, 0, img_page.size[0] - 1, img_page.size[1]), width=4)
     # img_page.show()
     return img_page
 
