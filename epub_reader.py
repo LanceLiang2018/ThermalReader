@@ -242,7 +242,7 @@ def save_one_page(page_title, page):
     page_count = page_count + 1
 
 
-def form_book_const(book_data, height=15, width=20):
+def form_book_const(book_data, height=15, width=13):
     img_height = (height + 1) * text_size[1] + 2 * text_size_small[1]
     for chapter in book_data['contents']:
         if 'image' in chapter:
@@ -284,6 +284,7 @@ def form_book_const(book_data, height=15, width=20):
 
     pages_path = "%s_pages" % book_data['title']
     pages = os.listdir(pages_path)
+    blank_img = Image.new("L", (int(img_height * 0.1), img_height), color='white')
     last_img_origin = Image.new("L", (3, img_height), color='black')
     last_img = last_img_origin.copy()
     path = "%s_pages/res" % book_data['title']
@@ -301,6 +302,7 @@ def form_book_const(book_data, height=15, width=20):
             last_img = last_img_origin.copy()
         image = Image.open("%s/%s" % (pages_path, page_file))
         last_img = blend_image(last_img, image)
+        last_img = blend_image(last_img, blank_img)
 
     last_img.save("%s/%06d.jpg" % (path, res_count))
     res_count = res_count + 1
@@ -338,15 +340,15 @@ def draw_one_page(page_data, book_data, progress=0.0, chapter=''):
     img_page.paste(img_text, box=(text_size_small[0], text_size_small[1]))
     draw = ImageDraw.Draw(img_page)
     draw.ink = 0
-    draw.text((0, 2), book_data['title'], font=font_small)
+    draw.text((text_size_small[0], 2), book_data['title'], font=font_small)
     draw.text((text_size_small[0], img_page.size[1] - text_size_small[1] - 2), chapter, font=font_small)
     chapter_size = draw.textsize(chapter, font=font_small)
     draw.text((chapter_size[0] + text_size_small[0], img_page.size[1]-text_size_small[1]-2), "  %.2f%%" % (progress * 100),
               font=font_small)
     draw.line((text_size[0], img_page.size[1]-text_size_small[1]-2-4,
                img_text.size[0] * progress, img_page.size[1]-text_size_small[1]-2-4), width=4)
-    draw.line((0, 0, 0, img_page.size[1]), width=4)
-    draw.line((img_page.size[0] - 1, 0, img_page.size[0] - 1, img_page.size[1]), width=4)
+    draw.line((2, 0, 2, img_page.size[1]), width=4)
+    draw.line((img_page.size[0] - 4, 0, img_page.size[0] - 4, img_page.size[1]), width=4)
     # img_page.show()
     return img_page
 
