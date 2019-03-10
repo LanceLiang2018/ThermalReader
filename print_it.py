@@ -54,17 +54,18 @@ os.chdir('./epub/')
 li = os.listdir('.')
 image_paths = []
 for i in li:
-    if i[-6:] == '_crops':
+    if i[-6:] == '_pages':
         image_paths.append(i)
 
 for image_file in image_paths:
-    imgs = os.listdir(image_file)
+    imgs = os.listdir("%s/res" % image_file)
     imgs.sort()
     print(imgs)
     input()
 
     for im in imgs:
-        image = Image.open("%s/%s" % (image_file, im)).convert('RGB')
+        print("Print:", "%s/res/%s" % (image_file, im))
+        image = Image.open("%s/res/%s" % (image_file, im)).convert('RGB')
         # printer.print_image(image=image)
         window = ImagePrinterWindow(image=image)
         app.closeAllWindows()

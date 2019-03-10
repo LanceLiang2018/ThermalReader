@@ -34,6 +34,15 @@ def do_it(filename):
     global page_count
     page_count = 1
     print("Filename:", filename)
+
+    if filename[-4:].lower() == '.txt':
+        data = copy.deepcopy(EpubBookData)
+        data['title'] = filename.split('.')[0]
+        with open(filename, 'r') as f:
+            data['contents'].append({'title': '', 'text': f.read()})
+        form_book_const(data)
+        return
+
     book = epub.read_epub(filename)
     data = copy.deepcopy(EpubBookData)
     print("book name:", book.get_metadata("DC", 'title'))
@@ -242,7 +251,7 @@ def save_one_page(page_title, page):
     page_count = page_count + 1
 
 
-def form_book_const(book_data, height=15, width=13):
+def form_book_const(book_data, height=18, width=13):
     img_height = (height + 1) * text_size[1] + 2 * text_size_small[1]
     for chapter in book_data['contents']:
         if 'image' in chapter:
@@ -291,26 +300,31 @@ def form_book_const(book_data, height=15, width=13):
     if not os.path.exists(path):
         os.mkdir(path)
     res_count = 1
+    link_count = 1
     # for page_file in pages:
     for i in trange(len(pages)):
         page_file = pages[i]
         if page_file[-4:] != '.jpg':
             continue
-        if last_img.size[0] / last_img.size[1] > MAX_SPLIT:
+        # if last_img.size[0] / last_img.size[1] > MAX_SPLIT:
+        if link_count == 3:
+            # last_img = blend_image(last_img, blank_img)
             last_img.save("%s/%06d.jpg" % (path, res_count))
             res_count = res_count + 1
             last_img = last_img_origin.copy()
+            # last_img = blend_image(last_img, blank_img)
+            link_count = 1
         image = Image.open("%s/%s" % (pages_path, page_file))
         last_img = blend_image(last_img, image)
-        last_img = blend_image(last_img, blank_img)
+        link_count = link_count + 1
 
     last_img.save("%s/%06d.jpg" % (path, res_count))
     res_count = res_count + 1
 
 
 MAX_SPLIT = 320 / 58
-font = ImageFont.truetype("msyh.ttc", 50)
-font_small = ImageFont.truetype("msyh.ttc", 35)
+font = ImageFont.truetype("msyhbd.ttc", 50)
+font_small = ImageFont.truetype("msyhbd.ttc", 35)
 
 
 def draw_one_text(page_data):
@@ -363,6 +377,6 @@ if __name__ == '__main__':
     os.chdir('epub/')
     _li = os.listdir('.')
     for _i in _li:
-        if _i[-5:] == '.epub':
+        if _i[-5:].lower() == '.epub' or _i[-4:].lower() == '.txt':
             do_it(_i)
 
